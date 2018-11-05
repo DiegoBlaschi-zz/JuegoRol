@@ -12,9 +12,9 @@ package juegoderol;
 public class Batman {
     private final String nombre="Batman";
     private int vida=100;
-    private final int minPower1=1;
+    private final int minPower1=5;
     private final int maxPower1=10;
-    private final int minPower2=1;
+    private final int minPower2=7;
     private final int maxPower2=20;
     private final int pocion= 4;
     private int ataque1;
@@ -28,13 +28,13 @@ public class Batman {
     }
     
     public int Ataque1(){
-        ataque1 =(int) (Math.random() * maxPower1);
+        ataque1 =(int) (Math.random() * maxPower1) + minPower1;
         vida = vida - ataque1;
         return vida;
     }
     
     public int Ataque2(){
-        ataque2 = (int) (Math.random() * maxPower2);
+        ataque2 = (int) (Math.random() * maxPower2) + minPower2;
         vida = vida - ataque2;
         return vida;
     }

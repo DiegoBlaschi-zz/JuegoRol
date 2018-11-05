@@ -23,18 +23,17 @@ public class JuegoDeRol {
         Scanner sc=new Scanner(System.in);
         System.out.println("Ingrese una opción:\n1.Ataque 1\n2.Ataque 2\n3.Recuperar vida\n4.Salir");
         while(batman.Vida() > 0 && superman.Vida() > 0){          
-            try{
-                System.out.println("Turno de Batman:");
-            int eleccionBatman = sc.nextInt();
+            System.out.println("Turno de Batman:");
+            String eleccionBatman = sc.nextLine();
             
             switch(eleccionBatman){
-                case 1: superman.Ataque1();
+                case "1": superman.Ataque1();
                     break;
-                case 2: superman.Ataque2();
+                case "2": superman.Ataque2();
                     break;
-                case 3: batman.Recuperar();
+                case "3": batman.Recuperar();
                     break;
-                case 4: batman.Salir();
+                case "4": batman.Salir();
                     break;
                 default:
                     break;
@@ -43,16 +42,16 @@ public class JuegoDeRol {
             superman.Informacion();
             
             System.out.println("Turno de superman:");
-            int eleccionSuperman = sc.nextInt();
+            String eleccionSuperman = sc.nextLine();
             
             switch(eleccionSuperman){
-                case 1: batman.Ataque1();
+                case "1": batman.Ataque1();
                     break;
-                case 2: batman.Ataque2();
+                case "2": batman.Ataque2();
                     break;
-                case 3: superman.Recuperar();
+                case "3": superman.Recuperar();
                     break;
-                case 4: superman.Salir();
+                case "4": superman.Salir();
                     break;
                 default:
                     break;
@@ -61,18 +60,14 @@ public class JuegoDeRol {
             superman.Informacion();
 
             }
-            catch(Exception e){
-                System.out.println("Ingrese un número de los detallados anteriormente");
-            }
             if (batman.Vida() <=0) {
-                System.out.println("Batman murió");
+                System.out.println("Batman se quedo sin vida");
                 System.out.println("Game over");
             }
             else if(superman.Vida() <=0) {
-                System.out.println("Superman murió");
+                System.out.println("Superman se quedo sin vida");
                 System.out.println("Game over");
             }
         }
     }
     
-}
